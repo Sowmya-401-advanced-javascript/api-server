@@ -1,11 +1,9 @@
 'use strict';
 
-const { delete } = require('superagent');
-const { create } = require('./food-model');
-const model = require('./food-model');
+// const model = require('./food-model');
 
 class FoodCollection {
-    constructor(){
+    constructor(model){
         this.model = model;
     }
 
@@ -15,10 +13,13 @@ class FoodCollection {
             return this.model.findOne({_id});
         } else {
             return this.model.find({});
+            
         }
     }
 
     create(record) {
+        console.log(record);
+        record.calories = parseInt(record.calories);
         let newRecord = new this.model(record);
         return newRecord.save();
     }
