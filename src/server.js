@@ -13,10 +13,12 @@ const logger = require('./middleware/logger');
 const notFoundHandler = require('./error-handlers/404');
 const serverError = require('./error-handlers/500');
 const foodRouter = require('./routes/food');
+const animalRouter = require('./routes/animal');
 
 app.use(express.json());
 // app.use(logger);
 app.use(foodRouter);
+app.use(animalRouter);
 
 app.get('/', (req, res) => {
     res.status(200).send('Hello World');
@@ -24,7 +26,7 @@ app.get('/', (req, res) => {
 
 // error handlers
 app.use('*', notFoundHandler); // 404 not found if we don't hit a route we made
-// app.use(serverError); // 500 error when something throws an error
+app.use(serverError); // 500 error when something throws an error
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));

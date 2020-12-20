@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const Foods = require('../models/food-model');
+const Foods = require('../models/food-model'); 
 const DataCollection = require('../models/data-collection-class')
 const foods = new DataCollection(Foods);
 
@@ -31,14 +31,15 @@ async function getOneFood(req, res) {
 async function createFood(req, res) {
     const obj = req.body;
     console.log(obj);
+    
     const newFood = await foods.create(obj)
     res.status(200).json(newFood);
 }
 
 async function updateFood(req, res) {
-    const newIDToBeGiven = req.params.id;
+    const id = req.params.id;
     const foodObjToBeUpdated = req.body;
-    const newUpdatedFood = await foods.update(newIDToBeGiven, foodObjToBeUpdated);
+    const newUpdatedFood = await foods.update(id, foodObjToBeUpdated);
     res.status(200).json(newUpdatedFood);
 }
 

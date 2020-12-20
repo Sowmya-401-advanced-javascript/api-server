@@ -4,7 +4,8 @@
   "description": "401-api-server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "watch": "jest --coverage --watchAll"
   },
   "repository": {
     "type": "git",
