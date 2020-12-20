@@ -2,7 +2,7 @@
 
 // const model = require('./food-model');
 
-class FoodCollection {
+class Collection {
     constructor(model){
         this.model = model;
     }
@@ -19,7 +19,7 @@ class FoodCollection {
 
     create(record) {
         console.log(record);
-        record.calories = parseInt(record.calories);
+        // record.calories = parseInt(record.calories);
         let newRecord = new this.model(record);
         return newRecord.save();
     }
@@ -33,4 +33,4 @@ class FoodCollection {
     }
 }
 
-module.exports = FoodCollection;
+module.exports = Collection;

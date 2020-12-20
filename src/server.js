@@ -13,12 +13,12 @@ const logger = require('./middleware/logger');
 const notFoundHandler = require('./error-handlers/404');
 const serverError = require('./error-handlers/500');
 const foodRouter = require('./routes/food');
-// const animalRouter = require('./routes/animal');
+const animalRouter = require('./routes/animal');
 
 app.use(express.json());
 // app.use(logger);
 app.use(foodRouter);
-// app.use(animalRouter);
+app.use(animalRouter);
 
 app.get('/', (req, res) => {
     res.status(200).send('Hello World');
