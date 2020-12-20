@@ -19,7 +19,6 @@ class Collection {
 
     create(record) {
         console.log(record);
-        // record.calories = parseInt(record.calories);
         let newRecord = new this.model(record);
         return newRecord.save();
     }
