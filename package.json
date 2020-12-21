@@ -2,8 +2,9 @@
   "name": "api-server",
   "version": "1.0.0",
   "description": "401-api-server",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "server.js",
     "test": "jest --coverage",
     "watch": "jest --coverage --watchAll"
   },
@@ -25,5 +26,6 @@
     "mongoose": "^5.11.7",
     "nodemon": "^2.0.6",
     "supertest": "^6.0.1"
-  }
+  },
+  "devDependencies": {}
 }
