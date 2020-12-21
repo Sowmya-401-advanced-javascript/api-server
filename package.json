@@ -2,9 +2,9 @@
   "name": "api-server",
   "version": "1.0.0",
   "description": "401-api-server",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "server.js",
+    "start": "node index.js",
     "test": "jest --coverage",
     "watch": "jest --coverage --watchAll"
   },
